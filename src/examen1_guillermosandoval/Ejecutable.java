@@ -11,19 +11,18 @@ import java.util.Date;
  *
  * @author Memo
  */
-class Ejecutable extends Archivo {
+class Ejecutable extends Archivo{
 
     private String texto;
     private String sistemaoperativo;
-    private Date fecha_creacion;
-    private Date fecha_modificacion;
+    private Date fecha_creacion = new Date();
+    private Date fecha_modificacion = new Date();
 
     public Ejecutable() {
         super();
     }
 
-    public Ejecutable(String texto, String sistemaoperativo, String Nombre, int Size, Date fecha_creacion, Date fecha_modificacion, Carpeta carpeta, ArchivodeTexto archivotexto, Ejecutable ejecutable) {
-        super(Nombre, Size, fecha_creacion, fecha_modificacion, carpeta, archivotexto, ejecutable);
+    public Ejecutable(String texto, String sistemaoperativo) {
         this.texto = texto;
         this.sistemaoperativo = sistemaoperativo;
     }
@@ -56,24 +55,21 @@ class Ejecutable extends Archivo {
         return fecha_modificacion;
     }
 
-    @Override
     public void setFecha_modificacion(Date fecha_modificacion) {
         this.fecha_modificacion = fecha_modificacion;
     }
- 
-    @Override
+
     public void fecha_creacion() {
         fecha_creacion = new Date();
     }
 
-    @Override
     public void fecha_modificacion() {
         fecha_modificacion = new Date();
     }
 
     @Override
     public String toString() {
-        return "Ejecutable{" + "texto=" + texto + ", sistemaoperativo=" + sistemaoperativo + ", fecha_creacion=" + fecha_creacion + ", fecha_modificacion=" + fecha_modificacion + '}';
+        return super.toString();
     }
 
 }

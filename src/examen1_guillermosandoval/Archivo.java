@@ -15,24 +15,16 @@ public abstract class Archivo {
 
     private String Nombre;
     private int Size;
-    private Date fecha_creacion;
-    private Date fecha_modificacion;
-    private Carpeta c;
-    private ArchivodeTexto a;
-    private Ejecutable e;
+    private Date fecha_creacion = new Date();
+    private Date fecha_modificacion = new Date();
 
     public Archivo() {
     }
 
-    public Archivo(String Nombre, int Size, Date fecha_creacion, Date fecha_modificacion, Carpeta c, ArchivodeTexto a, Ejecutable e) {
+    public Archivo(String Nombre) {
         this.Nombre = Nombre;
-        this.Size = Size;
-        this.fecha_creacion = fecha_creacion;
-        this.fecha_modificacion = fecha_modificacion;
-        this.c = c;
-        this.a = a;
-        this.e = e;
     }
+
 
     public String getNombre() {
         return Nombre;
@@ -55,7 +47,7 @@ public abstract class Archivo {
     }
 
     public void setFecha_creacion(Date fecha_creacion) {
-        this.fecha_creacion = fecha_creacion;
+        this.fecha_creacion = fecha_creacion = new Date();
     }
 
     public Date getFecha_modificacion() {
@@ -63,31 +55,7 @@ public abstract class Archivo {
     }
 
     public void setFecha_modificacion(Date fecha_modificacion) {
-        this.fecha_modificacion = fecha_modificacion;
-    }
-
-    public Carpeta getCarpeta() {
-        return c;
-    }
-
-    public void setCarpeta(Carpeta c) {
-        this.c = c;
-    }
-
-    public ArchivodeTexto getArchivotexto() {
-        return a;
-    }
-
-    public void setArchivotexto(ArchivodeTexto a) {
-        this.a = a;
-    }
-
-    public Ejecutable getEjecutable() {
-        return e;
-    }
-
-    public void setEjecutable(Ejecutable e) {
-        this.e = e;
+        this.fecha_modificacion = fecha_modificacion = new Date();
     }
 
     public abstract void fecha_creacion();
@@ -96,7 +64,7 @@ public abstract class Archivo {
 
     @Override
     public String toString() {
-        return "Archivo{" + "Nombre=" + Nombre + ", Size=" + Size + ", fecha_creacion=" + fecha_creacion + ", fecha_modificacion=" + fecha_modificacion + ", carpeta=" + c + ", archivotexto=" + a + ", ejecutable=" + e + '}';
+        return "Archivo{" + "Nombre=" + Nombre + ", fecha_creacion=" + fecha_creacion + ", fecha_modificacion=" + fecha_modificacion + '}';
     }
 
 }

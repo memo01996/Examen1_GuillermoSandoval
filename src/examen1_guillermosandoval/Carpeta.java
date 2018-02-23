@@ -14,53 +14,60 @@ import java.util.Date;
  */
 class Carpeta extends Archivo {
 
-    private ArrayList lista = new ArrayList();
-    private Date fecha_creacion;
-    private Date fecha_modificacion;
+    private ArrayList<Archivo> lista1 = new ArrayList();
+    private Date fecha_creacion  = new Date();
+    private Date fecha_modificacion = new Date();
 
     public Carpeta() {
         super();
     }
 
-    public Carpeta(String Nombre, int Size, Date fecha_creacion, Date fecha_modificacion, Carpeta carpeta, ArchivodeTexto archivotexto, Ejecutable ejecutable) {
-        super(Nombre, Size, fecha_creacion, fecha_modificacion, carpeta, archivotexto, ejecutable);
+    public Carpeta(ArrayList lista1, String Nombre) {
+        super(Nombre);
+        this.lista1 = lista1;
     }
 
-    public ArrayList getLista() {
-        return lista;
+    public ArrayList getLista1() {
+        return lista1;
     }
 
-    public void setLista(ArrayList lista) {
-        this.lista = lista;
+    public void setLista1(ArrayList lista1) {
+        this.lista1 = lista1;
     }
 
     public Date getFecha_creacion() {
+        fecha_creacion = new Date();
         return fecha_creacion;
     }
 
     public void setFecha_creacion(Date fecha_creacion) {
+        fecha_creacion = new Date();
         this.fecha_creacion = fecha_creacion;
     }
 
     public Date getFecha_modificacion() {
+        fecha_modificacion = new Date();
         return fecha_modificacion;
     }
 
     public void setFecha_modificacion(Date fecha_modificacion) {
+        fecha_modificacion = new Date();
         this.fecha_modificacion = fecha_modificacion;
     }
 
+    @Override
     public void fecha_creacion() {
         fecha_creacion = new Date();
     }
 
+    @Override
     public void fecha_modificacion() {
         fecha_modificacion = new Date();
     }
 
     @Override
     public String toString() {
-        return "Carpeta{" + "lista=" + lista + '}';
+        return "Carpeta{" + "lista=" + lista1 +  '}';
     }
 
 }

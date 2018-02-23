@@ -14,15 +14,14 @@ import java.util.Date;
 class ArchivodeTexto extends Archivo {
 
     private String texto;
-    private Date fecha_creacion;
-    private Date fecha_modificacion;
+    private Date fecha_creacion = new Date();
+    private Date fecha_modificacion = new Date();
 
     public ArchivodeTexto() {
         super();
     }
 
-    public ArchivodeTexto(String texto, String Nombre, int Size, Date fecha_creacion, Date fecha_modificacion, Carpeta carpeta, ArchivodeTexto archivotexto, Ejecutable ejecutable) {
-        super(Nombre, Size, fecha_creacion, fecha_modificacion, carpeta, archivotexto, ejecutable);
+    public ArchivodeTexto(String texto) {
         this.texto = texto;
     }
 
@@ -42,25 +41,9 @@ class ArchivodeTexto extends Archivo {
         fecha_modificacion = new Date();
     }
 
-    public Date getFecha_creacion() {
-        return fecha_creacion;
-    }
-
-    public void setFecha_creacion(Date fecha_creacion) {
-        this.fecha_creacion = fecha_creacion;
-    }
-
-    public Date getFecha_modificacion() {
-        return fecha_modificacion;
-    }
-
-    public void setFecha_modificacion(Date fecha_modificacion) {
-        this.fecha_modificacion = fecha_modificacion;
-    }
-
     @Override
     public String toString() {
-        return "ArchivodeTexto{" + "texto=" + texto + '}';
+        return "ArchivodeTexto{" + "texto=" + texto + ", fecha_creacion=" + fecha_creacion + ", fecha_modificacion=" + fecha_modificacion + '}';
     }
 
 }
